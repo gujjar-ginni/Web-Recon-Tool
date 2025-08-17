@@ -33,22 +33,17 @@ It collects crucial data such as **DNS records, GeoIP info, WHOIS data, open por
 Clone the repository and install dependencies:
 
 bash
-Copy
-Edit
 git clone https://github.com/gujjar-ginni/Rapid-Recon.git
 cd Rapid-Recon
 pip install -r requirements.txt
 Run the tool:
 
 bash
-Copy
-Edit
+
 python recon.py --help
 python recon.py --all example.com
+
 📂 Project Structure
-bash
-Copy
-Edit
 Rapid-Recon/
 │── recon.py          # Main script
 │── modules/          # Recon logic (DNS, WHOIS, ports, etc.)
@@ -69,11 +64,6 @@ For major changes, please open an issue first to discuss what you would like to 
 This project is licensed under the MIT License – see the LICENSE file for details.
 
 yaml
-Copy
-Edit
-
----
-
 👉 Ye ekdum **GitHub-ready** hai — sahi headings, emojis, aur structure ke sath.  
 
 Kya aap chahte ho mai aapke liye ek **`.gitignore`** bhi bana du taaki `reports/`, `.venv/`, aur `__pycache__/` jaise folders GitHub pe upload na ho?
