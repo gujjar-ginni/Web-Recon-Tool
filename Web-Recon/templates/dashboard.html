@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Rapid Recon{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Dashboard Overview Section -->
+    <div class="col-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Scans</h5>
+                                <h2 class="card-text">{{ total_scans }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Successful Scans</h5>
+                                <h2 class="card-text">{{ successful_scans }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-info mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Recent Activity</h5>
+                                <h2 class="card-text">{{ recent_scans|length }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Scans Section -->
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-history"></i> Recent Scans</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_scans %}
+                    <div class="list-group">
+                        {% for scan in recent_scans|reverse %}
+                            <a href="{{ url_for('results', scan_id=scan.scan_id) }}" 
+                               class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">{{ scan.target }}</h6>
+                                    <small>{{ scan.timestamp[:10] }}</small>
+                                </div>
+                                <small>
+                                    {% for module in scan.modules %}
+                                        <span class="badge bg-secondary">{{ module }}</span>
+                                    {% endfor %}
+                                </small>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted">No recent scans</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

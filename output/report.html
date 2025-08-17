@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recon Report - google.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #283e51, #485563);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+        h2 { font-size: 1.4rem; margin-top: 1rem; color: #1f3c88; }
+        .section {
+            background: #fff;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .summary-table, .kv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .summary-table th, .summary-table td,
+        .kv-table th, .kv-table td {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .summary-table th { background: #f0f4f8; }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .badge.success { background: #d4edda; color: #155724; }
+        .badge.fail { background: #f8d7da; color: #721c24; }
+        .card {
+            background: #f9fbfd;
+            border: 1px solid #e1e5ea;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.7rem;
+        }
+        .card strong { color: #2c3e50; }
+        .code-block {
+            background: #f4f4f4;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 0.5rem;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🛡️ Recon Scan Report</h1>
+    <p>Target: <strong>google.com</strong><br>
+    Generated on: 2025-08-16 22:26:02</p>
+</header>
+
+<div class="section">
+    <h2>📋 Summary</h2>
+    <table class="summary-table">
+        <tr><th>Section</th><th>Status</th></tr><tr><td>Whois</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Dns</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Ports</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Http</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Tech</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Geoip</td><td><span class='badge success'>✔️ Collected</span></td></tr></table></div><div class="section">
+    <h2>📂 Whois</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>domain</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>error</td><td>WHOIS domain lookup failed: timed out</td></tr></table></td></tr><tr><td>ip</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>asn</td><td>15169</td></tr><tr><td>asn_description</td><td>GOOGLE, US</td></tr><tr><td>network_name</td><td>GOOGLE</td></tr><tr><td>country</td><td><span class='badge fail'>No Data</span></td></tr><tr><td>ip_address</td><td>172.217.26.14</td></tr></table></td></tr></table>
+</div><div class="section">
+    <h2>📂 Dns</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>A</td><td><ul><li>172.217.167.206</li></ul></td></tr><tr><td>AAAA</td><td><ul><li>2404:6800:4002:82a::200e</li></ul></td></tr><tr><td>MX</td><td><ul><li>10 smtp.google.com.</li></ul></td></tr><tr><td>NS</td><td><ul><li>ns4.google.com.</li><li>ns3.google.com.</li><li>ns1.google.com.</li><li>ns2.google.com.</li></ul></td></tr><tr><td>TXT</td><td></td></tr><tr><td>CNAME</td><td></td></tr></table>
+</div><div class="section">
+    <h2>📂 Ports</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>open_ports</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>tcp</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>80</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>http</td></tr><tr><td>product</td><td>gws</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>443</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>https</td></tr><tr><td>product</td><td>gws</td></tr><tr><td>version</td><td></td></tr></table></td></tr></table></td></tr></table></td></tr><tr><td>os_detection</td><td></td></tr><tr><td>traceroute</td><td></td></tr><tr><td>error</td><td><span class='badge fail'>No Data</span></td></tr></table>
+</div><div class="section">
+    <h2>📂 Http</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>status_code</td><td>200</td></tr><tr><td>headers</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>Date</td><td>Sat, 16 Aug 2025 16:56:00 GMT</td></tr><tr><td>Expires</td><td>-1</td></tr><tr><td>Cache-Control</td><td>private, max-age=0</td></tr><tr><td>Content-Type</td><td>text/html; charset=UTF-8</td></tr><tr><td>Strict-Transport-Security</td><td>max-age=31536000</td></tr><tr><td>Content-Security-Policy-Report-Only</td><td>object-src &#x27;none&#x27;;base-uri &#x27;self&#x27;;script-src &#x27;nonce-ewee4fhTewXfhZKbI4MpXg&#x27; &#x27;strict-dynamic&#x27; &#x27;report-sample&#x27; &#x27;unsafe-eval&#x27; &#x27;unsafe-inline&#x27; https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp</td></tr><tr><td>Cross-Origin-Opener-Policy</td><td>same-origin-allow-popups; report-to=&quot;gws&quot;</td></tr><tr><td>Report-To</td><td>{&quot;group&quot;:&quot;gws&quot;,&quot;max_age&quot;:2592000,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://csp.withgoogle.com/csp/report-to/gws/other&quot;}]}</td></tr><tr><td>Accept-CH</td><td>Sec-CH-Prefers-Color-Scheme, Downlink, RTT, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version, Sec-CH-UA-Arch, Sec-CH-UA-Model, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version-List, Sec-CH-UA-WoW64</td></tr><tr><td>Permissions-Policy</td><td>unload=()</td></tr><tr><td>P3P</td><td>CP=&quot;This is not a P3P policy! See g.co/p3phelp for more info.&quot;</td></tr><tr><td>Content-Encoding</td><td>br</td></tr><tr><td>Server</td><td>gws</td></tr><tr><td>X-XSS-Protection</td><td>0</td></tr><tr><td>X-Frame-Options</td><td>SAMEORIGIN</td></tr><tr><td>Transfer-Encoding</td><td>chunked</td></tr><tr><td>Set-Cookie</td><td>AEC=AVh_V2gGPJ8NbTfLElgwFowFPva6HiJopo8yoCP2qNyxUjTpE4pXRtmbCw; expires=Thu, 12-Feb-2026 16:56:00 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=525=BF6_AB_kP5y6X_0l0M4tDK6SJb7Q4Q1F5IkLi31cOMRGwIIUdVKEJkhwRwxZuPlPVuQGKh2kRUPUjY_cfE4fcCJ4tvM1vwzOSLjfVe9bBKRcA2O8MclYd2pcTZ2NAhvAQsAr8Mscl8PXhmP4JRa1XQPiKieuJXE_h4fgZwAcJlwL6ngk6v3MVzLmAu6Fr7u8vfKErblPoerL64z2jQ; expires=Sun, 15-Feb-2026 16:56:00 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=none</td></tr><tr><td>Alt-Svc</td><td>h3=&quot;:443&quot;; ma=2592000,h3-29=&quot;:443&quot;; ma=2592000</td></tr></table></td></tr><tr><td>final_url</td><td>https://www.google.com/</td></tr></table>
+</div><div class="section">
+    <h2>📂 Tech</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>web-servers</td><td><ul><li>Google Web Server</li></ul></td></tr></table>
+</div><div class="section">
+    <h2>📂 Geoip</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>error</td><td>Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here</td></tr></table>
+</div><div class="footer">
+    &copy; 2025 Recon Tool | Generated for <strong>google.com</strong>
+</div>
+
+</body>
+</html>

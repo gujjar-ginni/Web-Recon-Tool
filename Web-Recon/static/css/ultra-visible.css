@@ -1,0 +1,274 @@
+/* Ultra-Visible Cybersecurity Theme for Rapid Recon */
+:root {
+    --bg-primary: #000000;
+    --bg-secondary: #111111;
+    --bg-tertiary: #222222;
+    --text-primary: #00ff00;
+    --text-secondary: #ffffff;
+    --text-muted: #dddddd;
+    --text-dim: #cccccc;
+    --accent-green: #00ff00;
+    --accent-red: #ff3333;
+    --accent-blue: #3399ff;
+    --accent-purple: #cc33ff;
+    --border-color: #555555;
+    --border-highlight: #00ff00;
+    --shadow-glow: 0 0 20px rgba(0, 255, 0, 0.6);
+    --shadow-strong: 0 0 30px rgba(0, 255, 0, 0.8);
+}
+
+/* Ultra-visible body styling */
+body {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    line-height: 2.0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Ultra-visible navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-bottom: 3px solid var(--border-highlight);
+    box-shadow: var(--shadow-glow);
+    padding: 1.5rem 0;
+}
+
+.navbar-brand {
+    color: var(--accent-green) !important;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0 0 15px var(--accent-green);
+    letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Ultra-visible cards */
+.card {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 3px solid var(--border-color);
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.card-body {
+    padding: 2.5rem;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Ultra-visible buttons */
+.btn {
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00cc00 100%);
+    border: 3px solid var(--accent-green);
+    color: var(--bg-primary);
+    font-size: 1.2rem;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--accent-red) 0%, #cc0000 100%);
+    border: 3px solid var(--accent-red);
+    color: var(--text-secondary);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
+    border: 3px solid var(--accent-blue);
+    color: var(--text-secondary);
+}
+
+/* Ultra-visible form controls */
+.form-control, .form-select {
+    background: var(--bg-tertiary);
+    border: 3px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    padding: 1.2rem;
+    border-radius: 10px;
+}
+
+.form-label {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+/* Ultra-visible tables */
+.table {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+}
+
+.table-dark th {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-green);
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.table-dark td {
+    padding: 1.5rem;
+    border-color: var(--border-color);
+}
+
+/* Ultra-visible typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--accent-green);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2.5rem; }
+h4 { font-size: 2.2rem; }
+h5 { font-size: 2rem; }
+h6 { font-size: 1.8rem; }
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    line-height: 2.2;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.lead {
+    color: var(--text-muted);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* Ultra-visible footer */
+footer {
+    background: var(--bg-secondary);
+    border-top: 3px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+footer h5, footer h6 {
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+footer a {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+}
+
+/* Ultra-visible scan cards */
+.scan-card {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.scan-card h5 {
+    color: var(--accent-green);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Ultra-visible terminal output */
+.terminal-output {
+    background: var(--bg-primary);
+    border: 3px solid var(--border-color);
+    border-radius: 12px;
+    padding: 3rem;
+    font-family: 'Courier New', monospace;
+    color: var(--text-primary);
+    font-size: 1.4rem;
+    line-height: 2;
+}
+
+/* Ultra-visible badges */
+.badge {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+}
+
+/* Ultra-visible lists */
+.list-group-item {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    padding: 1.5rem;
+}
+
+/* Ultra-visible responsive design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.5rem; }
+    .btn { font-size: 1.1rem; padding: 1rem 2rem; }
+    .card-body { padding: 2rem; }
+}
+
+/* Ultra-bright text effects */
+.text-success { color: var(--accent-green) !important; font-weight: bold; font-size: 1.3rem; }
+.text-danger { color: var(--accent-red) !important; font-weight: bold; font-size: 1.3rem; }
+.text-warning { color: #ff6600 !important; font-weight: bold; font-size: 1.3rem; }
+.text-info { color: var(--accent-blue) !important; font-weight: bold; font-size: 1.3rem; }
+
+/* Ultra-visible links */
+a {
+    color: var(--accent-green);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Ultra-visible focus indicators */
+*:focus {
+    outline: 3px solid var(--accent-green);
+    outline-offset: 3px;
+}
+
+/* Ultra-visible scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 8px;
+}

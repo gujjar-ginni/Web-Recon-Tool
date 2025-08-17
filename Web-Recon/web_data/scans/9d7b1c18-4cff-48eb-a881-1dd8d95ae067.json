@@ -1,0 +1,114 @@
+{
+  "scan_id": "9d7b1c18-4cff-48eb-a881-1dd8d95ae067",
+  "target": "https://www.piet.co.in/",
+  "cleaned_input": "www.piet.co.in",
+  "ip_address": "139.162.23.229",
+  "input_type": "url",
+  "timestamp": "2025-08-17T11:31:38.006746",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "subdomains",
+    "shodan"
+  ],
+  "results": {
+    "dns": {
+      "A": [
+        "139.162.23.229"
+      ],
+      "AAAA": [],
+      "MX": [
+        "10 alt4.aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com.",
+        "5 alt2.aspmx.l.google.com.",
+        "1 aspmx.l.google.com.",
+        "10 alt3.aspmx.l.google.com."
+      ],
+      "NS": [
+        "hope.ns.cloudflare.com.",
+        "anirban.ns.cloudflare.com."
+      ],
+      "TXT": [
+        "\"MS=ms13023121\"",
+        "\"MS=ms38455887\"",
+        "\"MS=ms41931268\"",
+        "\"MS=ms69075607\"",
+        "\"v=spf1 include:_spf.google.com ~all\"",
+        "\"173a253d-1408-45f8-94cf-cdf6054c53f6\""
+      ],
+      "CNAME": [
+        "piet.co.in."
+      ]
+    },
+    "geoip": {
+      "ip": "139.162.23.229",
+      "hostname": "server.cilearningschool.com",
+      "city": "Singapore",
+      "region": "Singapore",
+      "country": "SG",
+      "loc": "1.2897,103.8501",
+      "org": "AS63949 Akamai Connected Cloud",
+      "postal": "018989",
+      "timezone": "Asia/Singapore"
+    },
+    "whois": {
+      "domain": {
+        "domain_name": "piet.co.in",
+        "registrar": "Endurance Digital Domain Technology Private Limited",
+        "creation_date": "2008-04-21 18:24:51.032000",
+        "expiration_date": "2026-04-21 18:24:51.032000",
+        "name_servers": [
+          "hope.ns.cloudflare.com",
+          "anirban.ns.cloudflare.com"
+        ],
+        "emails": "apac-tldadmin@endurance.com"
+      },
+      "ip": {
+        "asn": "63949",
+        "asn_description": "AKAMAI-LINODE-AP Akamai Connected Cloud, SG",
+        "network_name": "LINODE-AP",
+        "country": "SG",
+        "ip_address": "139.162.23.229"
+      }
+    },
+    "ports": {
+      "target": "139.162.23.229",
+      "timestamp": "2025-08-17T06:01:39.072815",
+      "open_ports": [],
+      "os_guess": null,
+      "error": "Target did not respond"
+    },
+    "http": {
+      "url": "https://www.piet.co.in/",
+      "timestamp": "2025-08-17T06:01:38.231389",
+      "error": "HTTPSConnectionPool(host='www.piet.co.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002542C3F73B0>, 'Connection to www.piet.co.in timed out. (connect timeout=15)'))"
+    },
+    "shodan": {
+      "error": "Shodan API error: 403 Client Error: Forbidden for url: https://api.shodan.io/shodan/host/139.162.23.229?key=U4fB8fSLq33guZk7oczx7ylOrInG7eiJ"
+    },
+    "subdomains": {
+      "domain": "https://www.piet.co.in/",
+      "timestamp": "2025-08-17T06:01:50.847116",
+      "subdomains": [],
+      "methods": {
+        "dns": 0,
+        "certificate": 0,
+        "bruteforce": 0
+      },
+      "total": 0
+    },
+    "tech": {
+      "url": "https://www.piet.co.in/",
+      "timestamp": "2025-08-17T06:01:41.772556",
+      "technologies": {},
+      "errors": [
+        "Wappalyzer error: HTTPSConnectionPool(host='www.piet.co.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002542C93C4A0>, 'Connection to www.piet.co.in timed out. (connect timeout=10)'))"
+      ]
+    }
+  },
+  "user_id": "gora"
+}

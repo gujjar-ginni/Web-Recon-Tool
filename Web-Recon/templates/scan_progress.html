@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+
+{% block title %}Scan Progress - Rapid Recon{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Scan in Progress</h4>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <div class="spinner-border text-primary" role="status" id="mainSpinner">
+                        <span class="visually-hidden">Loading scan progress</span>
+                    </div>
+                    <h5 class="mt-3" id="scanStatus">Initializing scan...</h5>
+                </div>
+
+                <div class="mb-4">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                             id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" title="Scan progress">
+                            <span class="visually-hidden">0% complete</span>
+                        </div>
+                    </div>
+                    <div class="text-end mt-1">
+                        <small id="progressText">0% complete</small>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h6>Current Module: <span id="currentModule" class="text-primary">Initializing</span></h6>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6><i class="fas fa-list"></i> Scan Logs</h6>
+                    </div>
+                    <div class="card-body">
+                        <div id="scanLogs" class="scan-logs-container">
+                            <div class="text-success">Starting scan...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-danger" id="cancelBtn" onclick="cancelScan()">
+                        <i class="fas fa-stop"></i> Cancel Scan
+                    </button>
+                    <a href="{{ url_for('history') }}" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to History
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.scan-logs-container {
+    height: 300px; 
+    overflow-y: auto; 
+    background-color: #f8f9fa; 
+    border-radius: 5px; 
+    padding: 10px; 
+    font-family: monospace; 
+    font-size: 0.9rem;
+}
+.progress-bar[aria-valuenow] {
+    width: 0%;
+    transition: width 0.3s ease;
+}
+.text-success { color: #28a745; }
+.text-warning { color: #ffc107; }
+.text-danger { color: #dc3545; }
+.text-info { color: #17a2b8; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scanId = '{{ scan_id }}';
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const currentModule = document.getElementById('currentModule');
+    const scanLogs = document.getElementById('scanLogs');
+    const mainSpinner = document.getElementById('mainSpinner');
+    const scanStatus = document.getElementById('scanStatus');
+    let checkInterval;
+    let retryCount = 0;
+    const maxRetries = 3;
+
+    // Color codes for different log types
+    const logTypes = {
+        'info': 'text-info',
+        'success': 'text-success',
+        'warning': 'text-warning',
+        'error': 'text-danger',
+        'default': ''
+    };
+
+    function addLog(message, type = 'info') {
+        const logDiv = document.createElement('div');
+        logDiv.className = logTypes[type] || logTypes['default'];
+        logDiv.textContent = message;
+        scanLogs.appendChild(logDiv);
+        scanLogs.scrollTop = scanLogs.scrollHeight;
+    }
+
+    function checkProgress() {
+        fetch(`/api/scan/status/${scanId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                retryCount = 0; // Reset retry counter on success
+                
+                if (data.status === 'completed') {
+                    addLog('Scan completed successfully!', 'success');
+                    scanStatus.textContent = 'Scan completed!';
+                    mainSpinner.classList.remove('fa-spinner', 'fa-spin');
+                    mainSpinner.classList.add('fa-check-circle');
+                    clearInterval(checkInterval);
+                    setTimeout(() => {
+                        window.location.href = `/results/${scanId}`;
+                    }, 1500);
+                } else if (data.status === 'error') {
+                    const errorMsg = data.error || 'Scan failed due to an unknown error';
+                    addLog(`Error: ${errorMsg}`, 'error');
+                    scanStatus.textContent = 'Scan failed';
+                    mainSpinner.classList.remove('fa-spinner', 'fa-spin');
+                    mainSpinner.classList.add('fa-times-circle');
+                    clearInterval(checkInterval);
+                } else {
+                    updateProgress(data);
+                }
+            })
+            .catch(error => {
+                console.error('Error checking progress:', error);
+                retryCount++;
+                
+                if (retryCount <= maxRetries) {
+                    addLog(`Connection issue (attempt ${retryCount}/${maxRetries}), retrying...`, 'warning');
+                } else {
+                    addLog('Failed to connect to server after multiple attempts. Please check your connection.', 'error');
+                    scanStatus.textContent = 'Connection lost';
+                    mainSpinner.classList.remove('fa-spinner', 'fa-spin');
+                    mainSpinner.classList.add('fa-times-circle');
+                    clearInterval(checkInterval);
+                }
+            });
+    }
+
+    function updateProgress(data) {
+        const progress = Math.min(Math.max(data.progress || 0, 0), 100);
+        progressBar.style.width = progress + '%';
+        progressBar.setAttribute('aria-valuenow', progress);
+        progressBar.setAttribute('title', `Scan progress: ${progress}%`);
+        progressText.textContent = `${progress}% complete`;
+        
+        if (data.current_module) {
+            currentModule.textContent = data.current_module;
+        }
+
+        // Update logs if provided
+        if (data.logs && data.logs.length) {
+            scanLogs.innerHTML = '';
+            data.logs.forEach(log => {
+                const type = log.type || 'info';
+                addLog(log.message || log, type);
+            });
+        }
+
+        // Update scan status text
+        if (data.status_text) {
+            scanStatus.textContent = data.status_text;
+        }
+    }
+
+    function cancelScan() {
+        if (confirm('Are you sure you want to cancel this scan?')) {
+            clearInterval(checkInterval);
+            const btn = document.getElementById('cancelBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Cancelling...';
+            
+            fetch(`/api/scan/cancel/${scanId}`, {
+                method: 'POST'
+            })
+            .then(response => {
+                if (response.ok) {
+                    addLog('Scan cancelled successfully', 'warning');
+                    setTimeout(() => {
+                        window.location.href = "{{ url_for('history') }}";
+                    }, 1000);
+                } else {
+                    throw new Error('Failed to cancel scan');
+                }
+            })
+            .catch(error => {
+                addLog('Error cancelling scan: ' + error.message, 'error');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-stop"></i> Cancel Scan';
+            });
+        }
+    }
+
+    // Start polling with faster initial checks, then slow down
+    checkProgress(); // Immediate first check
+    checkInterval = setInterval(checkProgress, 1500);
+});
+</script>
+{% endblock %}

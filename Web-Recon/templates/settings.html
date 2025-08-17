@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Settings - Rapid Recon{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-cog"></i> Settings</h4>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="settingsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="api-tab" data-bs-toggle="tab" data-bs-target="#api-pane" type="button" role="tab" aria-controls="api-pane" aria-selected="true">
+                            <i class="fas fa-key"></i> API Keys
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="appearance-tab" data-bs-toggle="tab" data-bs-target="#appearance-pane" type="button" role="tab" aria-controls="appearance-pane" aria-selected="false">
+                            <i class="fas fa-palette"></i> Appearance
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="notifications-tab" data-bs-toggle="tab" data-bs-target="#notifications-pane" type="button" role="tab" aria-controls="notifications-pane" aria-selected="false">
+                            <i class="fas fa-bell"></i> Notifications
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="privacy-tab" data-bs-toggle="tab" data-bs-target="#privacy-pane" type="button" role="tab" aria-controls="privacy-pane" aria-selected="false">
+                            <i class="fas fa-shield-alt"></i> Privacy
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-4" id="settingsTabContent">
+                    <!-- API Keys Tab -->
+                    <div class="tab-pane fade show active" id="api-pane" role="tabpanel" aria-labelledby="api-tab">
+                        <h5>API Configuration</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="ipinfo_token" class="form-label">IPInfo API Token</label>
+                                <input type="password" class="form-control" id="ipinfo_token" 
+                                       placeholder="Enter your IPInfo API token">
+                                <small class="form-text text-muted">
+                                    Get your token from <a href="https://ipinfo.io/" target="_blank" rel="noopener noreferrer">ipinfo.io</a>
+                                </small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="shodan_key" class="form-label">Shodan API Key</label>
+                                <input type="password" class="form-control" id="shodan_key" 
+                                       placeholder="Enter your Shodan API key">
+                                <small class="form-text text-muted">
+                                    Get your key from <a href="https://shodan.io/" target="_blank" rel="noopener noreferrer">shodan.io</a>
+                                </small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save API Keys
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Appearance Tab -->
+                    <div class="tab-pane fade" id="appearance-pane" role="tabpanel" aria-labelledby="appearance-tab">
+                        <h5>Appearance Settings</h5>
+                        <form id="themeForm">
+                            <div class="mb-3">
+                                <label for="theme" class="form-label">Theme</label>
+                                <select class="form-select" id="theme" name="theme">
+                                    <option value="accessible-theme">Accessible</option>
+                                    <option value="cyber-theme" selected>Cyber</option>
+                                    <option value="dark-mode">Dark Mode</option>
+                                    <option value="high-visibility">High Visibility</option>
+                                    <option value="ultra-visible">Ultra Visible</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Theme
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="tab-pane fade" id="notifications-pane" role="tabpanel" aria-labelledby="notifications-tab">
+                        <h5>Notification Settings</h5>
+                        <form>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="email_notifications" checked>
+                                <label class="form-check-label" for="email_notifications">
+                                    Email notifications for scan completion
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="risk_alerts" checked>
+                                <label class="form-check-label" for="risk_alerts">
+                                    Alert for high-risk findings
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="notification_email" class="form-label">Notification Email</label>
+                                <input type="email" class="form-control" id="notification_email" 
+                                       value="{{ session.username }}@example.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Notification Settings
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Privacy Tab -->
+                    <div class="tab-pane fade" id="privacy-pane" role="tabpanel" aria-labelledby="privacy-tab">
+                        <h5>Privacy Settings</h5>
+                        <form>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="data_retention" checked>
+                                <label class="form-check-label" for="data_retention">
+                                    Enable automatic data retention (30 days)
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="anonymous_mode">
+                                <label class="form-check-label" for="anonymous_mode">
+                                    Anonymous scanning mode
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Delete All Scan History
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('themeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const theme = document.getElementById('theme').value;
+    document.body.className = theme;
+    localStorage.setItem('selectedTheme', theme);
+    
+    // Show success message
+    const alert = document.createElement('div');
+    alert.className = 'alert alert-success alert-dismissible fade show mt-3';
+    alert.innerHTML = `
+        Theme updated successfully!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
+    document.getElementById('appearance-pane').appendChild(alert);
+});
+</script>
+{% endblock %}

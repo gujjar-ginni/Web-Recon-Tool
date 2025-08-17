@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}New Scan - Rapid Recon{% endblock %}
+
+{% block content %}
+<main id="main-content">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h1><i class="fas fa-search" aria-hidden="true"></i> New Reconnaissance Scan</h1>
+                </div>
+                <div class="card-body">
+                    <form id="scanForm" method="POST" action="{{ url_for('scan') }}" aria-label="Scan configuration form">
+                        <div class="mb-4">
+                            <label for="target" class="form-label">
+                                <i class="fas fa-bullseye" aria-hidden="true"></i> Target Domain/IP/URL
+                                <span class="text-danger" aria-label="required">*</span>
+                            </label>
+                            <input type="text" 
+                                   class="form-control form-control-lg" 
+                                   id="target" 
+                                   name="target" 
+                                   placeholder="example.com or 192.168.1.1 or https://example.com" 
+                                   required
+                                   aria-required="true"
+                                   aria-describedby="target-help">
+                            <div id="target-help" class="form-text">
+                                Enter a domain name, IP address, or URL to scan
+                            </div>
+                        </div>
+
+                        <fieldset class="mb-4">
+                            <legend class="form-label h3">
+                                <i class="fas fa-cogs" aria-hidden="true"></i> Select Modules
+                            </legend>
+                            <div class="row">
+                                {% set modules = [
+                                   {'id': 'whois', 'name': 'WHOIS Lookup', 'icon': 'fas fa-info-circle', 'desc': 'Domain registration information'},
+                                   {'id': 'dns', 'name': 'DNS Lookup', 'icon': 'fas fa-globe', 'desc': 'DNS records and configuration'},
+                                   {'id': 'geoip', 'name': 'GeoIP Lookup', 'icon': 'fas fa-map-marker-alt', 'desc': 'Geolocation information'},
+                                   {'id': 'http', 'name': 'HTTP Headers', 'icon': 'fas fa-server', 'desc': 'HTTP response headers'},
+                                   {'id': 'ports', 'name': 'Port Scan', 'icon': 'fas fa-network-wired', 'desc': 'Open port detection'},
+                                   {'id': 'tech', 'name': 'Tech Stack', 'icon': 'fas fa-microchip', 'desc': 'Technology detection'},
+                                   {'id': 'subdomains', 'name': 'Subdomain Finder', 'icon': 'fas fa-sitemap', 'desc': 'Enumerates subdomains of the target domain'},
+                                   {'id': 'shodan', 'name': 'Shodan Search', 'icon': 'fas fa-search', 'desc': 'Finds host data via Shodan.io'}
+                                ] %}
+
+                                {% for module in modules %}
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" 
+                                               type="checkbox" 
+                                               id="{{ module.id }}" 
+                                               name="modules" 
+                                               value="{{ module.id }}" 
+                                               checked
+                                               aria-describedby="{{ module.id }}-desc">
+                                        <label class="form-check-label" for="{{ module.id }}">
+                                            <i class="{{ module.icon }}" aria-hidden="true"></i> 
+                                            <strong>{{ module.name }}</strong>
+                                        </label>
+                                        <div id="{{ module.id }}-desc" class="form-text">
+                                            {{ module.desc }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </fieldset>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" 
+                                       type="checkbox" 
+                                       id="runAll" 
+                                       checked
+                                       aria-describedby="runAll-desc">
+                                <label class="form-check-label" for="runAll">
+                                    <strong>Run All Modules</strong>
+                                </label>
+                                <div id="runAll-desc" class="form-text">
+                                    Check to run all available modules
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play" aria-hidden="true"></i> Start Scan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+const runAllCheckbox = document.getElementById('runAll');
+const moduleCheckboxes = document.querySelectorAll('input[name="modules"]');
+
+runAllCheckbox.addEventListener('change', function() {
+    moduleCheckboxes.forEach(cb => cb.checked = this.checked);
+});
+
+moduleCheckboxes.forEach(cb => {
+    cb.addEventListener('change', function() {
+        runAllCheckbox.checked = Array.from(moduleCheckboxes).every(mcb => mcb.checked);
+    });
+});
+
+// Accessibility: Announce changes to screen readers
+function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    setTimeout(() => document.body.removeChild(announcement), 1000);
+}
+</script>
+{% endblock %}

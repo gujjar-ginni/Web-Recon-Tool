@@ -1,0 +1,151 @@
+{
+  "scan_id": "caf9d320-2eaa-4042-918b-09242922ca65",
+  "target": "https://www.wayspire.com",
+  "cleaned_input": "www.wayspire.com",
+  "ip_address": "198.54.119.159",
+  "input_type": "url",
+  "timestamp": "2025-08-16T12:37:30.976824",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "all"
+  ],
+  "results": {
+    "whois": {
+      "domain": {
+        "domain_name": "WAYSPIRE.COM",
+        "registrar": "NAMECHEAP INC",
+        "creation_date": "2018-02-03 16:03:17",
+        "expiration_date": "2026-02-03 16:03:17",
+        "name_servers": [
+          "DNS1.NAMECHEAPHOSTING.COM",
+          "DNS2.NAMECHEAPHOSTING.COM"
+        ],
+        "emails": [
+          "abuse@namecheap.com",
+          "7266b52303994cc4a31a92ba50462336.protect@withheldforprivacy.com"
+        ]
+      },
+      "ip": {
+        "asn": "22612",
+        "asn_description": "NAMECHEAP-NET, US",
+        "network_name": "NAMEC-4",
+        "country": null,
+        "ip_address": "198.54.119.159"
+      }
+    },
+    "dns": {
+      "A": [
+        "198.54.119.159"
+      ],
+      "AAAA": [],
+      "MX": [
+        "0 mail.wayspire.com."
+      ],
+      "NS": [
+        "dns2.namecheaphosting.com.",
+        "dns1.namecheaphosting.com."
+      ],
+      "TXT": [
+        "\"v=spf1 +a +mx +ip4:68.65.121.177 +ip4:10.10.10.12 include:spf.web-hosting.com +ip4:198.54.119.159 +ip4:68.65.123.43 +ip4:68.65.123.97 ~all\""
+      ],
+      "CNAME": [
+        "wayspire.com."
+      ]
+    },
+    "geoip": {
+      "error": "Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here"
+    },
+    "http": {
+      "error": "HTTP request failed: HTTPSConnectionPool(host='www.wayspire.com', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.wayspire.com'. (_ssl.c:1000)\")))"
+    },
+    "ports": {
+      "open_ports": {
+        "tcp": {
+          "20": {
+            "state": "closed",
+            "service": "ftp-data",
+            "product": "",
+            "version": ""
+          },
+          "21": {
+            "state": "open",
+            "service": "ftp",
+            "product": "Pure-FTPd",
+            "version": ""
+          },
+          "26": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "53": {
+            "state": "open",
+            "service": "domain",
+            "product": "",
+            "version": ""
+          },
+          "80": {
+            "state": "open",
+            "service": "http-proxy",
+            "product": "HAProxy http proxy",
+            "version": "2.0.0 or later"
+          },
+          "110": {
+            "state": "open",
+            "service": "pop3",
+            "product": "Dovecot pop3d",
+            "version": ""
+          },
+          "143": {
+            "state": "open",
+            "service": "imap",
+            "product": "Dovecot imapd",
+            "version": ""
+          },
+          "443": {
+            "state": "open",
+            "service": "http-proxy",
+            "product": "HAProxy http proxy",
+            "version": "2.0.0 or later"
+          },
+          "465": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "587": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "993": {
+            "state": "open",
+            "service": "imaps",
+            "product": "",
+            "version": ""
+          },
+          "995": {
+            "state": "open",
+            "service": "pop3s",
+            "product": "",
+            "version": ""
+          }
+        }
+      },
+      "os_detection": [],
+      "traceroute": [],
+      "error": null
+    },
+    "tech": {
+      "info": "No technologies detected or the site may be unreachable."
+    }
+  }
+}

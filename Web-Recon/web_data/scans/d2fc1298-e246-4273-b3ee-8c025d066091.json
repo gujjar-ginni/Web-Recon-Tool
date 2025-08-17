@@ -1,0 +1,256 @@
+{
+  "scan_id": "d2fc1298-e246-4273-b3ee-8c025d066091",
+  "target": "https://www.piet.co.in/",
+  "cleaned_input": "www.piet.co.in",
+  "ip_address": "139.162.23.229",
+  "input_type": "url",
+  "timestamp": "2025-08-17T09:00:29.780230",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "subdomains",
+    "shodan"
+  ],
+  "results": {
+    "geoip": {
+      "error": "Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here"
+    },
+    "dns": {
+      "A": [
+        "139.162.23.229"
+      ],
+      "AAAA": [],
+      "MX": [
+        "10 alt3.aspmx.l.google.com.",
+        "10 alt4.aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com.",
+        "5 alt2.aspmx.l.google.com.",
+        "1 aspmx.l.google.com."
+      ],
+      "NS": [
+        "hope.ns.cloudflare.com.",
+        "anirban.ns.cloudflare.com."
+      ],
+      "TXT": [
+        "\"v=spf1 include:_spf.google.com ~all\"",
+        "\"173a253d-1408-45f8-94cf-cdf6054c53f6\"",
+        "\"MS=ms13023121\"",
+        "\"MS=ms38455887\"",
+        "\"MS=ms41931268\"",
+        "\"MS=ms69075607\""
+      ],
+      "CNAME": [
+        "piet.co.in."
+      ]
+    },
+    "http": {
+      "status_code": 200,
+      "headers": {
+        "Date": "Sun, 17 Aug 2025 03:30:31 GMT",
+        "Server": "Apache",
+        "Content-Type": "text/html",
+        "Cache-Control": "private, no-cache, no-store, must-revalidate, max-age=0",
+        "cf-edge-cache": "no-cache",
+        "Keep-Alive": "timeout=50, max=300",
+        "Connection": "Keep-Alive",
+        "Transfer-Encoding": "chunked"
+      },
+      "final_url": "https://www.piet.co.in/"
+    },
+    "whois": {
+      "domain": {
+        "domain_name": "piet.co.in",
+        "registrar": "Endurance Digital Domain Technology Private Limited",
+        "creation_date": "2008-04-21 18:24:51.032000",
+        "expiration_date": "2026-04-21 18:24:51.032000",
+        "name_servers": [
+          "hope.ns.cloudflare.com",
+          "anirban.ns.cloudflare.com"
+        ],
+        "emails": "apac-tldadmin@endurance.com"
+      },
+      "ip": {
+        "asn": "63949",
+        "asn_description": "AKAMAI-LINODE-AP Akamai Connected Cloud, SG",
+        "network_name": "LINODE-AP",
+        "country": "SG",
+        "ip_address": "139.162.23.229"
+      }
+    },
+    "tech": {
+      "error": "'set' object has no attribute 'items'"
+    },
+    "shodan": {
+      "error": "Shodan API key is required"
+    },
+    "subdomains": {
+      "domain": "https://www.piet.co.in/",
+      "total_subdomains": 0,
+      "subdomains": [],
+      "discovery_methods": {
+        "dns": 0,
+        "web": 0,
+        "bruteforce": 0
+      }
+    },
+    "ports": {
+      "target": "139.162.23.229",
+      "scan_type": "nmap",
+      "ports": {
+        "tcp": {
+          "80": {
+            "state": "open",
+            "service": "http",
+            "product": "Apache httpd",
+            "version": "",
+            "extrainfo": "",
+            "cpe": "cpe:/a:apache:http_server"
+          },
+          "443": {
+            "state": "open",
+            "service": "http",
+            "product": "Apache httpd",
+            "version": "",
+            "extrainfo": "",
+            "cpe": "cpe:/a:apache:http_server"
+          }
+        }
+      },
+      "os": {
+        "matches": [
+          {
+            "name": "Linux 4.19 - 5.15",
+            "accuracy": "92",
+            "line": "70666",
+            "osclass": [
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "4.X",
+                "accuracy": "92",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:4"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Linux 4.15 - 5.19",
+            "accuracy": "85",
+            "line": "70534",
+            "osclass": [
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "4.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:4"
+                ]
+              },
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "5.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:5"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Linux 5.0 - 5.14",
+            "accuracy": "85",
+            "line": "71713",
+            "osclass": [
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "5.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:5"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Linux 5.10",
+            "accuracy": "85",
+            "line": "71824",
+            "osclass": [
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "5.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:5.10"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)",
+            "accuracy": "85",
+            "line": "91792",
+            "osclass": [
+              {
+                "type": "router",
+                "vendor": "MikroTik",
+                "osfamily": "RouterOS",
+                "osgen": "7.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:mikrotik:routeros:7"
+                ]
+              },
+              {
+                "type": "router",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "5.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:5.6.3"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Linux 4.15",
+            "accuracy": "85",
+            "line": "70477",
+            "osclass": [
+              {
+                "type": "general purpose",
+                "vendor": "Linux",
+                "osfamily": "Linux",
+                "osgen": "4.X",
+                "accuracy": "85",
+                "cpe": [
+                  "cpe:/o:linux:linux_kernel:4.15"
+                ]
+              }
+            ]
+          }
+        ],
+        "accuracy": "92"
+      },
+      "traceroute": [],
+      "timestamp": "2025-08-17T09:00:30.113172",
+      "error": null
+    }
+  },
+  "user_id": "gora"
+}

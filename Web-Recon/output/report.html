@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recon Report - piet.co.in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #283e51, #485563);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            color: #1f3c88;
+        }
+        .section {
+            background: #fff;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .summary-table, .kv-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .summary-table th, .summary-table td,
+        .kv-table th, .kv-table td {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .summary-table th {
+            background: #f0f4f8;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .badge.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .badge.fail {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .card {
+            background: #f9fbfd;
+            border: 1px solid #e1e5ea;
+            border-radius: 6px;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.7rem;
+        }
+        .card strong {
+            color: #2c3e50;
+        }
+        .code-block {
+            background: #f4f4f4;
+            border-radius: 6px;
+            padding: 1rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 0.5rem;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🛡️ Recon Scan Report</h1>
+    <p>Target: <strong>piet.co.in</strong><br>
+    Generated on: 2025-08-16 10:20:39</p>
+</header>
+
+<div class="section">
+    <h2>📋 Summary</h2>
+    <table class="summary-table">
+        <tr><th>Section</th><th>Status</th></tr><tr><td>Whois</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Dns</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Ports</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Http</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Tech</td><td><span class='badge success'>✔️ Collected</span></td></tr><tr><td>Geoip</td><td><span class='badge success'>✔️ Collected</span></td></tr></table></div><div class="section">
+    <h2>📂 Whois</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>domain</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>domain_name</td><td>piet.co.in</td></tr><tr><td>registrar</td><td>Endurance Digital Domain Technology Private Limited</td></tr><tr><td>creation_date</td><td>2008-04-21 18:24:51.032000</td></tr><tr><td>expiration_date</td><td>2026-04-21 18:24:51.032000</td></tr><tr><td>name_servers</td><td><ul><li>hope.ns.cloudflare.com</li><li>anirban.ns.cloudflare.com</li></ul></td></tr><tr><td>emails</td><td>apac-tldadmin@endurance.com</td></tr></table></td></tr><tr><td>ip</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>asn</td><td>63949</td></tr><tr><td>asn_description</td><td>AKAMAI-LINODE-AP Akamai Connected Cloud, SG</td></tr><tr><td>network_name</td><td>LINODE-AP</td></tr><tr><td>country</td><td>SG</td></tr><tr><td>ip_address</td><td>139.162.23.229</td></tr></table></td></tr></table>
+</div><div class="section">
+    <h2>📂 Dns</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>A</td><td><ul><li>139.162.23.229</li></ul></td></tr><tr><td>AAAA</td><td></td></tr><tr><td>MX</td><td><ul><li>1 aspmx.l.google.com.</li><li>10 alt3.aspmx.l.google.com.</li><li>10 alt4.aspmx.l.google.com.</li><li>5 alt1.aspmx.l.google.com.</li><li>5 alt2.aspmx.l.google.com.</li></ul></td></tr><tr><td>NS</td><td><ul><li>anirban.ns.cloudflare.com.</li><li>hope.ns.cloudflare.com.</li></ul></td></tr><tr><td>TXT</td><td><ul><li>&quot;MS=ms41931268&quot;</li><li>&quot;MS=ms69075607&quot;</li><li>&quot;v=spf1 include:_spf.google.com ~all&quot;</li><li>&quot;173a253d-1408-45f8-94cf-cdf6054c53f6&quot;</li><li>&quot;MS=ms13023121&quot;</li><li>&quot;MS=ms38455887&quot;</li></ul></td></tr><tr><td>CNAME</td><td></td></tr></table>
+</div><div class="section">
+    <h2>📂 Ports</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>open_ports</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>tcp</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>20</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>closed</td></tr><tr><td>service</td><td>ftp-data</td></tr><tr><td>product</td><td></td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>21</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>ftp</td></tr><tr><td>product</td><td>Pure-FTPd</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>22</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>closed</td></tr><tr><td>service</td><td>ssh</td></tr><tr><td>product</td><td></td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>25</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>smtp</td></tr><tr><td>product</td><td></td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>53</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>domain</td></tr><tr><td>product</td><td>ISC BIND</td></tr><tr><td>version</td><td>9.11.36</td></tr></table></td></tr><tr><td>80</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>http</td></tr><tr><td>product</td><td>Apache httpd</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>110</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>pop3</td></tr><tr><td>product</td><td>Dovecot pop3d</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>143</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>imap</td></tr><tr><td>product</td><td>Dovecot imapd</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>443</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>http</td></tr><tr><td>product</td><td>Apache httpd</td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>465</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>smtp</td></tr><tr><td>product</td><td>Exim smtpd</td></tr><tr><td>version</td><td>4.98.2</td></tr></table></td></tr><tr><td>587</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>smtp</td></tr><tr><td>product</td><td>Exim smtpd</td></tr><tr><td>version</td><td>4.98.2</td></tr></table></td></tr><tr><td>993</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>imaps</td></tr><tr><td>product</td><td></td></tr><tr><td>version</td><td></td></tr></table></td></tr><tr><td>995</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>state</td><td>open</td></tr><tr><td>service</td><td>pop3s</td></tr><tr><td>product</td><td></td></tr><tr><td>version</td><td></td></tr></table></td></tr></table></td></tr></table></td></tr><tr><td>os_detection</td><td><div class='card'><strong>name</strong>: Linux 4.19 - 5.15<br><strong>accuracy</strong>: 97<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;4.X&#x27;, &#x27;accuracy&#x27;: &#x27;97&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:4&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 4.15<br><strong>accuracy</strong>: 92<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;4.X&#x27;, &#x27;accuracy&#x27;: &#x27;92&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:4.15&#x27;]}]<br></div><div class='card'><strong>name</strong>: IPFire 2.27 (Linux 5.15 - 6.1)<br><strong>accuracy</strong>: 91<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;firewall&#x27;, &#x27;vendor&#x27;: &#x27;IPFire&#x27;, &#x27;osfamily&#x27;: &#x27;IPFire&#x27;, &#x27;osgen&#x27;: &#x27;2.X&#x27;, &#x27;accuracy&#x27;: &#x27;91&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:ipfire:ipfire:2.27&#x27;]}, {&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;5.X&#x27;, &#x27;accuracy&#x27;: &#x27;91&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:5.15&#x27;]}, {&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;6.X&#x27;, &#x27;accuracy&#x27;: &#x27;91&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:6.1&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 5.4<br><strong>accuracy</strong>: 90<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;5.X&#x27;, &#x27;accuracy&#x27;: &#x27;90&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:5.4&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 5.0 - 5.14<br><strong>accuracy</strong>: 88<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;5.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:5&#x27;]}]<br></div><div class='card'><strong>name</strong>: MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)<br><strong>accuracy</strong>: 88<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;router&#x27;, &#x27;vendor&#x27;: &#x27;MikroTik&#x27;, &#x27;osfamily&#x27;: &#x27;RouterOS&#x27;, &#x27;osgen&#x27;: &#x27;7.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:mikrotik:routeros:7&#x27;]}, {&#x27;type&#x27;: &#x27;router&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;5.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:5.6.3&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 3.11 - 4.9<br><strong>accuracy</strong>: 88<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;3.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:3&#x27;]}, {&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;4.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:4&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 3.2 - 3.8<br><strong>accuracy</strong>: 88<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;3.X&#x27;, &#x27;accuracy&#x27;: &#x27;88&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:3&#x27;]}]<br></div><div class='card'><strong>name</strong>: Linux 2.6.32<br><strong>accuracy</strong>: 87<br><strong>osclass</strong>: [{&#x27;type&#x27;: &#x27;general purpose&#x27;, &#x27;vendor&#x27;: &#x27;Linux&#x27;, &#x27;osfamily&#x27;: &#x27;Linux&#x27;, &#x27;osgen&#x27;: &#x27;2.6.X&#x27;, &#x27;accuracy&#x27;: &#x27;87&#x27;, &#x27;cpe&#x27;: [&#x27;cpe:/o:linux:linux_kernel:2.6.32&#x27;]}]<br></div></td></tr><tr><td>traceroute</td><td></td></tr><tr><td>error</td><td><span class='badge fail'>No Data</span></td></tr></table>
+</div><div class="section">
+    <h2>📂 Http</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>status_code</td><td>200</td></tr><tr><td>headers</td><td><table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>Date</td><td>Sat, 16 Aug 2025 04:50:32 GMT</td></tr><tr><td>Server</td><td>Apache</td></tr><tr><td>Link</td><td>&lt;https://www.piet.co.in/wp-json/&gt;; rel=&quot;https://api.w.org/&quot;, &lt;https://www.piet.co.in/wp-json/wp/v2/pages/9363&gt;; rel=&quot;alternate&quot;; title=&quot;JSON&quot;; type=&quot;application/json&quot;, &lt;https://www.piet.co.in/&gt;; rel=shortlink</td></tr><tr><td>Content-Encoding</td><td>gzip</td></tr><tr><td>Vary</td><td>Accept-Encoding</td></tr><tr><td>Upgrade</td><td>h2,h2c</td></tr><tr><td>Connection</td><td>Upgrade, Keep-Alive</td></tr><tr><td>Keep-Alive</td><td>timeout=50, max=300</td></tr><tr><td>Transfer-Encoding</td><td>chunked</td></tr><tr><td>Content-Type</td><td>text/html; charset=UTF-8</td></tr></table></td></tr><tr><td>final_url</td><td>https://www.piet.co.in/</td></tr></table>
+</div><div class="section">
+    <h2>📂 Tech</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>web-servers</td><td><ul><li>Apache</li></ul></td></tr><tr><td>font-scripts</td><td><ul><li>Google Font API</li></ul></td></tr><tr><td>tag-managers</td><td><ul><li>Google Tag Manager</li></ul></td></tr><tr><td>widgets</td><td><ul><li>OWL Carousel</li></ul></td></tr><tr><td>javascript-frameworks</td><td><ul><li>jQuery</li></ul></td></tr><tr><td>photo-galleries</td><td><ul><li>jQuery</li><li>OWL Carousel</li></ul></td></tr><tr><td>web-frameworks</td><td><ul><li>Twitter Bootstrap</li></ul></td></tr><tr><td>javascript-graphics</td><td><ul><li>Twitter Emoji (Twemoji)</li></ul></td></tr><tr><td>cms</td><td><ul><li>WordPress</li></ul></td></tr><tr><td>programming-languages</td><td><ul><li>PHP</li></ul></td></tr><tr><td>blogs</td><td><ul><li>PHP</li><li>WordPress</li></ul></td></tr><tr><td>video-players</td><td><ul><li>YouTube</li></ul></td></tr></table>
+</div><div class="section">
+    <h2>📂 Geoip</h2>
+    <table class='kv-table'><tr><th>Key</th><th>Value</th></tr><tr><td>error</td><td>Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here</td></tr></table>
+</div><div class="footer">
+    &copy; 2025 Recon Tool | Generated for <strong>piet.co.in</strong>
+</div>
+
+</body>
+</html>

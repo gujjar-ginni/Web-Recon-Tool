@@ -1,0 +1,351 @@
+/* Ultra-Accessible Theme for Rapid Recon */
+/* WCAG 2.1 AA Compliant */
+
+:root {
+    /* High contrast color palette */
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --accent-color: #0066cc;
+    --success-color: #008000;
+    --warning-color: #cc6600;
+    --danger-color: #cc0000;
+    --info-color: #0066cc;
+    
+    /* Typography - Large, readable fonts */
+    --font-size-base: 18px;
+    --font-size-large: 22px;
+    --font-size-small: 16px;
+    --font-size-h1: 36px;
+    --font-size-h2: 30px;
+    --font-size-h3: 26px;
+    --font-size-h4: 22px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+    
+    /* Spacing - Generous spacing for readability */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* Borders - Clear, visible borders */
+    --border-width: 2px;
+    --border-radius: 8px;
+    
+    /* Focus indicators */
+    --focus-color: #0066cc;
+    --focus-width: 3px;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    max-width: 75ch;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+a:hover, a:focus {
+    color: var(--primary-color);
+    background-color: #ffff00;
+    outline: var(--focus-width) solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* Buttons - Large, high contrast */
+.btn, button, [type="submit"], [type="button"] {
+    font-size: var(--font-size-large);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: var(--border-width) solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    min-height: 44px;
+    min-width: 44px;
+    transition: all 0.2s ease;
+}
+
+.btn:hover, .btn:focus,
+button:hover, button:focus,
+[type="submit"]:hover, [type="submit"]:focus,
+[type="button"]:hover, [type="button"]:focus {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    outline: var(--focus-width) solid var(--focus-color);
+    outline-offset: 2px;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    border-color: var(--accent-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Forms - Accessible form controls */
+input, textarea, select {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-md);
+    border: var(--border-width) solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    min-height: 44px;
+    width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: var(--focus-width) solid var(--focus-color);
+    outline-offset: 2px;
+    border-color: var(--focus-color);
+}
+
+label {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+/* Cards - Clear, well-spaced */
+.card {
+    border: var(--border-width) solid var(--primary-color);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--secondary-color);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-large);
+    font-weight: 700;
+}
+
+.card-body {
+    padding: var(--spacing-lg);
+}
+
+/* Navigation - Clear, accessible */
+.navbar {
+    background-color: var(--primary-color);
+    padding: var(--spacing-md) 0;
+}
+
+.navbar-brand {
+    font-size: var(--font-size-h3);
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    font-size: var(--font-size-large);
+    font-weight: 600;
+    color: var(--secondary-color) !important;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius);
+}
+
+.nav-link:hover, .nav-link:focus {
+    background-color: var(--secondary-color);
+    color: var(--primary-color) !important;
+    outline: var(--focus-width) solid var(--focus-color);
+}
+
+/* Tables - Clear, readable */
+.table {
+    font-size: var(--font-size-base);
+    border: var(--border-width) solid var(--primary-color);
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+    padding: var(--spacing-md);
+}
+
+.table td {
+    padding: var(--spacing-md);
+    border-bottom: var(--border-width) solid var(--primary-color);
+}
+
+/* Alerts - High contrast */
+.alert {
+    font-size: var(--font-size-large);
+    padding: var(--spacing-lg);
+    border: var(--border-width) solid;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+}
+
+.alert-success {
+    background-color: #e6ffe6;
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.alert-warning {
+    background-color: #fff3e6;
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
+.alert-danger {
+    background-color: #ffe6e6;
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.alert-info {
+    background-color: #e6f2ff;
+    border-color: var(--info-color);
+    color: var(--info-color);
+}
+
+/* Progress bars - Large, visible */
+.progress {
+    height: 30px;
+    background-color: #f0f0f0;
+    border: var(--border-width) solid var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    line-height: 30px;
+}
+
+/* Checkboxes and radio buttons - Large, accessible */
+.form-check-input {
+    width: 24px;
+    height: 24px;
+    margin-right: var(--spacing-md);
+}
+
+.form-check-label {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+}
+
+/* Spacing utilities */
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.p-1 { padding: var(--spacing-xs); }
+.p-2 { padding: var(--spacing-sm); }
+.p-3 { padding: var(--spacing-md); }
+.p-4 { padding: var(--spacing-lg); }
+.p-5 { padding: var(--spacing-xl); }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 20px;
+        --font-size-large: 24px;
+        --font-size-h1: 32px;
+        --font-size-h2: 28px;
+    }
+    
+    .container {
+        padding: var(--spacing-md);
+    }
+    
+    .btn, button {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    padding: var(--spacing-md);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #ffffff;
+        --accent-color: #0066cc;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        font-size: 14pt;
+        line-height: 1.5;
+    }
+    
+    .btn, button {
+        border: 2pt solid black;
+    }
+}

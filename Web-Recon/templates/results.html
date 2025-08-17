@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}Scan Results - Rapid Recon{% endblock %}
+
+{% block content %}
+<main id="main-content">
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4"><i class="fas fa-poll" aria-hidden="true"></i> Scan Results</h1>
+
+        <!-- Target Info -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-globe" aria-hidden="true"></i> Target Information</h2>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">Target:</dt>
+                    <dd class="col-sm-9">{{ scan_data.target }}</dd>
+                    
+                    <dt class="col-sm-3">Timestamp:</dt>
+                    <dd class="col-sm-9">{{ scan_data.timestamp }}</dd>
+                    
+                    <dt class="col-sm-3">Scan ID:</dt>
+                    <dd class="col-sm-9">{{ scan_data.scan_id }}</dd>
+                </dl>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-download" aria-hidden="true"></i> Download Report</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('export_results', scan_id=scan_data.scan_id, format='json') }}" 
+                           class="btn btn-primary btn-lg w-100" 
+                           aria-label="Download scan results as JSON">
+                            <i class="fas fa-file-code" aria-hidden="true"></i> JSON
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('export_results', scan_id=scan_data.scan_id, format='pdf') }}" 
+                           class="btn btn-success btn-lg w-100" 
+                           aria-label="Download scan results as PDF">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i> PDF
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{{ url_for('export_results', scan_id=scan_data.scan_id, format='html') }}" 
+                           class="btn btn-info btn-lg w-100" 
+                           aria-label="Download scan results as HTML">
+                            <i class="fas fa-file-alt" aria-hidden="true"></i> HTML
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <button type="button" 
+                                class="btn btn-warning btn-lg w-100" 
+                                onclick="showEmailModal()"
+                                aria-label="Email scan report">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modules Tabs -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-cogs" aria-hidden="true"></i> Scan Modules</h2>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="scanTabs" role="tablist">
+                    {%- for module, results in scan_data.results.items() -%}
+                    {%- set safe_id = module|replace(" ", "_")|lower -%}
+                    {%- set is_first = loop.first -%}
+                    <li class="nav-item" role="presentation">
+                    <button 
+                            class="nav-link {% if is_first %}active{% endif %}" 
+                            id="{{ safe_id }}-tab" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#{{ safe_id }}-pane" 
+                            type="button" 
+                            role="tab"
+                            aria-controls="{{ safe_id }}-pane"
+                            {% if is_first %}aria-selected="true"{% else %}aria-selected="false"{% endif %}>
+                            {{ module|title }}
+                    </button>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+
+                <div class="tab-content mt-3" id="scanTabsContent">
+                    {%- for module, results in scan_data.results.items() -%}
+                    {%- set safe_id = module|replace(" ", "_")|lower -%}
+                    {%- set is_first = loop.first -%}
+                    <div 
+                        class="tab-pane fade {% if is_first %}show active{% endif %}" 
+                        id="{{ safe_id }}-pane" 
+                        role="tabpanel" 
+                        aria-labelledby="{{ safe_id }}-tab">
+
+                        {% if results %}
+                            {% if results is string %}
+                                <pre class="bg-light p-3 rounded" aria-label="{{ module }} results">{{ results }}</pre>
+                            {% elif results is iterable and results is not string %}
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {%- for item in results -%}
+                                            <tr>
+                                                <td>{{ item }}</td>
+                                            </tr>
+                                            {%- endfor -%}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            {% else %}
+                                <pre class="bg-light p-3 rounded" aria-label="{{ module }} results">{{ results | tojson(indent=2) }}</pre>
+                            {% endif %}
+                        {% else %}
+                            <p class="text-muted">No results available for this module.</p>
+                        {% endif %}
+                    </div>
+                    {%- endfor -%}
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Factors Section -->
+        {% if scan_data.risk_factors %}
+        <div class="card mb-4">
+            <div class="card-header">
+                <h2 class="mb-0"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Risk Factors</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled mb-0">
+                    {%- for factor in scan_data.risk_factors -%}
+                    <li>{{ factor }}</li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Action Buttons -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <a href="{{ url_for('dashboard') }}" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Dashboard
+                </a>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="{{ url_for('scan') }}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-search" aria-hidden="true"></i> New Scan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel">Email Report</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="{{ url_for('email_report', scan_id=scan_data.scan_id) }}">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Send Report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+function showEmailModal() {
+    const emailModal = new bootstrap.Modal(document.getElementById('emailModal'));
+    emailModal.show();
+}
+
+// Accessibility: Focus management
+document.addEventListener('DOMContentLoaded', function() {
+    // Set focus to the first tab
+    const firstTab = document.querySelector('.nav-link.active');
+    if (firstTab) {
+        firstTab.focus();
+    }
+});
+</script>
+{% endblock %}

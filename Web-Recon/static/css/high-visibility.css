@@ -1,0 +1,273 @@
+/* High Visibility Cybersecurity Theme for Rapid Recon */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #00ff41;
+    --text-secondary: #ffffff;
+    --text-muted: #cccccc;
+    --text-dim: #aaaaaa;
+    --accent-green: #00ff41;
+    --accent-red: #ff0040;
+    --accent-blue: #0080ff;
+    --border-color: #444444;
+    --border-highlight: #00ff41;
+    --shadow-glow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+/* Enhanced body styling */
+body {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* Enhanced navbar */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-bottom: 2px solid var(--border-highlight);
+    box-shadow: var(--shadow-glow);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: var(--accent-green) !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px var(--accent-green);
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+/* Enhanced cards */
+.card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 2px solid var(--border-color);
+    color: var(--accent-green);
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Enhanced buttons */
+.btn {
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    margin: 0.25rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00cc33 100%);
+    border: 2px solid var(--accent-green);
+    color: var(--bg-primary);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--accent-red) 0%, #cc0033 100%);
+    border: 2px solid var(--accent-red);
+    color: var(--text-secondary);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
+    border: 2px solid var(--accent-blue);
+    color: var(--text-secondary);
+}
+
+/* Enhanced form controls */
+.form-control, .form-select {
+    background: var(--bg-tertiary);
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.form-control:focus, .form-select:focus {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 0.3rem rgba(0, 255, 65, 0.4);
+    color: var(--text-secondary);
+}
+
+.form-label {
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Enhanced tables */
+.table {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.table-dark th {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-green);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1.5rem;
+}
+
+.table-dark td {
+    padding: 1rem 1.5rem;
+    border-color: var(--border-color);
+}
+
+/* Enhanced typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px var(--accent-green);
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.7rem; }
+h5 { font-size: 1.5rem; }
+h6 { font-size: 1.3rem; }
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.lead {
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* Enhanced footer */
+footer {
+    background: var(--bg-secondary);
+    border-top: 2px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer h5, footer h6 {
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+footer a {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Enhanced scan cards */
+.scan-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.scan-card h5 {
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Enhanced terminal output */
+.terminal-output {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    font-family: 'Courier New', monospace;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 2rem; }
+    .btn { font-size: 1rem; padding: 0.8rem 1.5rem; }
+    .card-body { padding: 1.5rem; }
+}
+
+/* High contrast elements */
+.text-success { color: var(--accent-green) !important; font-weight: bold; }
+.text-danger { color: var(--accent-red) !important; font-weight: bold; }
+.text-warning { color: #ff6600 !important; font-weight: bold; }
+.text-info { color: var(--accent-blue) !important; font-weight: bold; }
+
+/* Enhanced badges */
+.badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+/* Enhanced lists */
+.list-group-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 6px;
+}
+
+/* Focus indicators */
+*:focus {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}

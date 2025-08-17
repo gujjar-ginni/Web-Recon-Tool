@@ -1,0 +1,344 @@
+/* Cybersecurity Theme for Rapid Recon */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #00ff41;
+    --text-secondary: #e6e1e1;
+    --text-muted: #888888;
+    --accent-green: #00ff41;
+    --accent-red: #ff0040;
+    --accent-blue: #0080ff;
+    --accent-purple: #8000ff;
+    --border-color: #333333;
+    --shadow-glow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Matrix-style background animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 128, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Navbar Cyber Style */
+.navbar {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-bottom: 1px solid var(--accent-green);
+    box-shadow: var(--shadow-glow);
+}
+
+.navbar-brand {
+    color: var(--accent-green) !important;
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--accent-green);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-secondary) !important;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-green) !important;
+    text-shadow: 0 0 5px var(--accent-green);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-green);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Cards with cyber styling */
+.card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-glow);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--accent-green);
+}
+
+/* Buttons with cyber styling */
+.btn {
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00cc33 100%);
+    border: 1px solid var(--accent-green);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #00cc33 0%, var(--accent-green) 100%);
+    box-shadow: 0 0 15px var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--accent-red) 0%, #cc0033 100%);
+    border: 1px solid var(--accent-red);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #0066cc 100%);
+    border: 1px solid var(--accent-blue);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff6600 0%, #cc5200 100%);
+    border: 1px solid #ff6600;
+}
+
+/* Form controls */
+.form-control, .form-select {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: 'Courier New', monospace;
+}
+
+.form-control:focus, .form-select:focus {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 65, 0.25);
+    color: var(--text-primary);
+}
+
+/* Tables with cyber styling */
+.table {
+    color: var(--text-secondary);
+}
+
+.table-dark {
+    background-color: var(--bg-secondary);
+}
+
+.table-dark th {
+    background-color: var(--bg-tertiary);
+    color: var(--accent-green);
+    border-color: var(--border-color);
+}
+
+/* Progress bars */
+.progress {
+    background: var(--bg-tertiary);
+    height: 8px;
+    border-radius: 4px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+    box-shadow: 0 0 10px var(--accent-green);
+}
+
+/* Alerts with cyber styling */
+.alert {
+    border: 1px solid;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.alert-success {
+    background: rgba(0, 255, 65, 0.1);
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+.alert-danger {
+    background: rgba(255, 0, 64, 0.1);
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.alert-warning {
+    background: rgba(255, 102, 0, 0.1);
+    border-color: #ff6600;
+    color: #ff6600;
+}
+
+.alert-info {
+    background: rgba(0, 128, 255, 0.1);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+/* Footer */
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+/* Scan cards */
+.scan-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.scan-card:hover {
+    border-color: var(--accent-green);
+    box-shadow: var(--shadow-glow);
+}
+
+.scan-card h5 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+}
+
+/* Terminal-style output */
+.terminal-output {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    color: var(--text-primary);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.terminal-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-radius: 50%;
+    border-top-color: var(--accent-green);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Pulse animation for live elements */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 65, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 65, 0);
+    }
+}
+
+/* Glitch effect for headers */
+.glitch {
+    position: relative;
+    color: var(--accent-green);
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite;
+    color: var(--accent-red);
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite;
+    color: var(--accent-blue);
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0%, 14%, 15%, 49%, 50%, 99%, 100% {
+        transform: translate(0);
+    }
+    15%, 49% {
+        transform: translate(-2px, -1px);
+    }
+}
+
+@keyframes glitch-2 {
+    0%, 20%, 21%, 62%, 63%, 99%, 100% {
+        transform: translate(0);
+    }
+    21%, 62% {
+        transform: translate(2px, 1px);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 1.5em;
+    }
+}

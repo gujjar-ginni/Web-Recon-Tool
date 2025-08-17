@@ -1,0 +1,172 @@
+{
+  "scan_id": "8a35f49e-6705-487a-a711-c5c911bd5b82",
+  "target": "https://www.piet.co.in",
+  "cleaned_input": "www.piet.co.in",
+  "ip_address": "139.162.23.229",
+  "input_type": "url",
+  "timestamp": "2025-08-16T12:19:27.505789",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "all"
+  ],
+  "results": {
+    "whois": {
+      "domain": {
+        "domain_name": "piet.co.in",
+        "registrar": "Endurance Digital Domain Technology Private Limited",
+        "creation_date": "2008-04-21 18:24:51.032000",
+        "expiration_date": "2026-04-21 18:24:51.032000",
+        "name_servers": [
+          "hope.ns.cloudflare.com",
+          "anirban.ns.cloudflare.com"
+        ],
+        "emails": "apac-tldadmin@endurance.com"
+      },
+      "ip": {
+        "asn": "63949",
+        "asn_description": "AKAMAI-LINODE-AP Akamai Connected Cloud, SG",
+        "network_name": "LINODE-AP",
+        "country": "SG",
+        "ip_address": "139.162.23.229"
+      }
+    },
+    "dns": {
+      "A": [
+        "139.162.23.229"
+      ],
+      "AAAA": [],
+      "MX": [
+        "1 aspmx.l.google.com.",
+        "10 alt3.aspmx.l.google.com.",
+        "10 alt4.aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com.",
+        "5 alt2.aspmx.l.google.com."
+      ],
+      "NS": [
+        "anirban.ns.cloudflare.com.",
+        "hope.ns.cloudflare.com."
+      ],
+      "TXT": [
+        "\"173a253d-1408-45f8-94cf-cdf6054c53f6\"",
+        "\"MS=ms13023121\"",
+        "\"MS=ms38455887\"",
+        "\"MS=ms41931268\"",
+        "\"MS=ms69075607\"",
+        "\"v=spf1 include:_spf.google.com ~all\""
+      ],
+      "CNAME": [
+        "piet.co.in."
+      ]
+    },
+    "geoip": {
+      "error": "Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here"
+    },
+    "http": {
+      "status_code": 200,
+      "headers": {
+        "Date": "Sat, 16 Aug 2025 06:49:34 GMT",
+        "Server": "Apache",
+        "Link": "<https://www.piet.co.in/wp-json/>; rel=\"https://api.w.org/\", <https://www.piet.co.in/wp-json/wp/v2/pages/9363>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://www.piet.co.in/>; rel=shortlink",
+        "Content-Encoding": "gzip",
+        "Vary": "Accept-Encoding",
+        "Upgrade": "h2,h2c",
+        "Connection": "Upgrade, Keep-Alive",
+        "Keep-Alive": "timeout=50, max=300",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "final_url": "https://www.piet.co.in/"
+    },
+    "ports": {
+      "open_ports": {
+        "tcp": {
+          "20": {
+            "state": "closed",
+            "service": "ftp-data",
+            "product": "",
+            "version": ""
+          },
+          "21": {
+            "state": "open",
+            "service": "ftp",
+            "product": "Pure-FTPd",
+            "version": ""
+          },
+          "22": {
+            "state": "closed",
+            "service": "ssh",
+            "product": "",
+            "version": ""
+          },
+          "53": {
+            "state": "open",
+            "service": "domain",
+            "product": "ISC BIND",
+            "version": "9.11.36"
+          },
+          "80": {
+            "state": "open",
+            "service": "http",
+            "product": "Apache httpd",
+            "version": ""
+          },
+          "110": {
+            "state": "open",
+            "service": "pop3",
+            "product": "Dovecot pop3d",
+            "version": ""
+          },
+          "143": {
+            "state": "open",
+            "service": "imap",
+            "product": "Dovecot imapd",
+            "version": ""
+          },
+          "443": {
+            "state": "open",
+            "service": "https",
+            "product": "Apache",
+            "version": ""
+          },
+          "465": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "587": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "993": {
+            "state": "open",
+            "service": "imaps",
+            "product": "",
+            "version": ""
+          },
+          "995": {
+            "state": "open",
+            "service": "pop3s",
+            "product": "",
+            "version": ""
+          }
+        }
+      },
+      "os_detection": [],
+      "traceroute": [],
+      "error": null
+    },
+    "tech": {
+      "web-servers": [
+        "Apache"
+      ]
+    }
+  }
+}

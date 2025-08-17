@@ -1,0 +1,93 @@
+{
+  "scan_id": "788d3c0a-60f5-46d3-a26e-b911c6e6fb16",
+  "target": "https://www.piet.co.in",
+  "cleaned_input": "www.piet.co.in",
+  "ip_address": "139.162.23.229",
+  "input_type": "url",
+  "timestamp": "2025-08-16T21:04:52.074798",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "subdomains",
+    "shodan"
+  ],
+  "results": {
+    "whois": {
+      "domain": {
+        "domain_name": "piet.co.in",
+        "registrar": "Endurance Digital Domain Technology Private Limited",
+        "creation_date": "2008-04-21 18:24:51.032000",
+        "expiration_date": "2026-04-21 18:24:51.032000",
+        "name_servers": [
+          "hope.ns.cloudflare.com",
+          "anirban.ns.cloudflare.com"
+        ],
+        "emails": "apac-tldadmin@endurance.com"
+      },
+      "ip": {
+        "asn": "63949",
+        "asn_description": "AKAMAI-LINODE-AP Akamai Connected Cloud, SG",
+        "network_name": "LINODE-AP",
+        "country": "SG",
+        "ip_address": "139.162.23.229"
+      }
+    },
+    "dns": {
+      "A": [
+        "139.162.23.229"
+      ],
+      "AAAA": [],
+      "MX": [
+        "1 aspmx.l.google.com.",
+        "10 alt3.aspmx.l.google.com.",
+        "10 alt4.aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com.",
+        "5 alt2.aspmx.l.google.com."
+      ],
+      "NS": [
+        "anirban.ns.cloudflare.com.",
+        "hope.ns.cloudflare.com."
+      ],
+      "TXT": [
+        "\"MS=ms41931268\"",
+        "\"MS=ms69075607\"",
+        "\"v=spf1 include:_spf.google.com ~all\"",
+        "\"173a253d-1408-45f8-94cf-cdf6054c53f6\"",
+        "\"MS=ms13023121\"",
+        "\"MS=ms38455887\""
+      ],
+      "CNAME": [
+        "piet.co.in."
+      ]
+    },
+    "geoip": {
+      "error": "Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here"
+    },
+    "http": {
+      "error": "HTTP request failed: HTTPSConnectionPool(host='www.piet.co.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C3C1A48EC0>, 'Connection to www.piet.co.in timed out. (connect timeout=10)'))"
+    },
+    "ports": {
+      "error": "No response from target or host is down."
+    },
+    "tech": {
+      "info": "No technologies detected or the site may be unreachable."
+    },
+    "subdomains": {
+      "domain": "https://www.piet.co.in",
+      "total_subdomains": 0,
+      "subdomains": [],
+      "discovery_methods": {
+        "dns": 0,
+        "web": 0,
+        "bruteforce": 0
+      }
+    },
+    "shodan": {
+      "error": "Shodan API key not configured"
+    }
+  }
+}

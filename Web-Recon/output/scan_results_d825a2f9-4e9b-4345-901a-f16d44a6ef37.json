@@ -1,0 +1,413 @@
+{
+  "scan_id": "d825a2f9-4e9b-4345-901a-f16d44a6ef37",
+  "target": "https://www.piet.co.in/",
+  "cleaned_input": "www.piet.co.in",
+  "ip_address": "139.162.23.229",
+  "input_type": "url",
+  "timestamp": "2025-08-17T08:21:08.133022",
+  "modules": [
+    "whois",
+    "dns",
+    "geoip",
+    "http",
+    "ports",
+    "tech",
+    "subdomains",
+    "shodan"
+  ],
+  "results": {
+    "geoip": {
+      "error": "Missing IPINFO_TOKEN in your .env file. Example: IPINFO_TOKEN=your_token_here"
+    },
+    "dns": {
+      "A": [
+        "139.162.23.229"
+      ],
+      "AAAA": [],
+      "MX": [
+        "5 alt2.aspmx.l.google.com.",
+        "1 aspmx.l.google.com.",
+        "10 alt3.aspmx.l.google.com.",
+        "10 alt4.aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com."
+      ],
+      "NS": [
+        "anirban.ns.cloudflare.com.",
+        "hope.ns.cloudflare.com."
+      ],
+      "TXT": [
+        "\"v=spf1 include:_spf.google.com ~all\"",
+        "\"173a253d-1408-45f8-94cf-cdf6054c53f6\"",
+        "\"MS=ms13023121\"",
+        "\"MS=ms38455887\"",
+        "\"MS=ms41931268\"",
+        "\"MS=ms69075607\""
+      ],
+      "CNAME": [
+        "piet.co.in."
+      ]
+    },
+    "http": {
+      "status_code": 200,
+      "headers": {
+        "Date": "Sun, 17 Aug 2025 02:51:09 GMT",
+        "Server": "Apache",
+        "Link": "<https://www.piet.co.in/wp-json/>; rel=\"https://api.w.org/\", <https://www.piet.co.in/wp-json/wp/v2/pages/9363>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://www.piet.co.in/>; rel=shortlink",
+        "Content-Encoding": "gzip",
+        "Vary": "Accept-Encoding",
+        "Upgrade": "h2,h2c",
+        "Connection": "Upgrade, Keep-Alive",
+        "Keep-Alive": "timeout=50, max=300",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "final_url": "https://www.piet.co.in/"
+    },
+    "whois": {
+      "domain": {
+        "domain_name": "piet.co.in",
+        "registrar": "Endurance Digital Domain Technology Private Limited",
+        "creation_date": "2008-04-21 18:24:51.032000",
+        "expiration_date": "2026-04-21 18:24:51.032000",
+        "name_servers": [
+          "hope.ns.cloudflare.com",
+          "anirban.ns.cloudflare.com"
+        ],
+        "emails": "apac-tldadmin@endurance.com"
+      },
+      "ip": {
+        "asn": "63949",
+        "asn_description": "AKAMAI-LINODE-AP Akamai Connected Cloud, SG",
+        "network_name": "LINODE-AP",
+        "country": "SG",
+        "ip_address": "139.162.23.229"
+      }
+    },
+    "tech": {
+      "web-servers": [
+        "Apache"
+      ],
+      "font-scripts": [
+        "Google Font API"
+      ],
+      "tag-managers": [
+        "Google Tag Manager"
+      ],
+      "widgets": [
+        "OWL Carousel"
+      ],
+      "javascript-frameworks": [
+        "jQuery"
+      ],
+      "photo-galleries": [
+        "jQuery",
+        "OWL Carousel"
+      ],
+      "web-frameworks": [
+        "Twitter Bootstrap"
+      ],
+      "javascript-graphics": [
+        "Twitter Emoji (Twemoji)"
+      ],
+      "cms": [
+        "WordPress"
+      ],
+      "programming-languages": [
+        "PHP"
+      ],
+      "blogs": [
+        "PHP",
+        "WordPress"
+      ],
+      "video-players": [
+        "YouTube"
+      ]
+    },
+    "shodan": {
+      "error": "Shodan API key not configured"
+    },
+    "subdomains": {
+      "domain": "https://www.piet.co.in/",
+      "total_subdomains": 0,
+      "subdomains": [],
+      "discovery_methods": {
+        "dns": 0,
+        "web": 0,
+        "bruteforce": 0
+      }
+    },
+    "ports": {
+      "open_ports": {
+        "tcp": {
+          "20": {
+            "state": "closed",
+            "service": "ftp-data",
+            "product": "",
+            "version": ""
+          },
+          "21": {
+            "state": "open",
+            "service": "ftp",
+            "product": "Pure-FTPd",
+            "version": ""
+          },
+          "22": {
+            "state": "closed",
+            "service": "ssh",
+            "product": "",
+            "version": ""
+          },
+          "25": {
+            "state": "open",
+            "service": "smtp",
+            "product": "",
+            "version": ""
+          },
+          "53": {
+            "state": "open",
+            "service": "domain",
+            "product": "ISC BIND",
+            "version": "9.11.36"
+          },
+          "80": {
+            "state": "open",
+            "service": "http",
+            "product": "Apache httpd",
+            "version": ""
+          },
+          "110": {
+            "state": "open",
+            "service": "pop3",
+            "product": "Dovecot pop3d",
+            "version": ""
+          },
+          "143": {
+            "state": "open",
+            "service": "imap",
+            "product": "Dovecot imapd",
+            "version": ""
+          },
+          "443": {
+            "state": "open",
+            "service": "http",
+            "product": "Apache httpd",
+            "version": ""
+          },
+          "465": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "587": {
+            "state": "open",
+            "service": "smtp",
+            "product": "Exim smtpd",
+            "version": "4.98.2"
+          },
+          "993": {
+            "state": "open",
+            "service": "imaps",
+            "product": "",
+            "version": ""
+          },
+          "995": {
+            "state": "open",
+            "service": "pop3s",
+            "product": "",
+            "version": ""
+          }
+        }
+      },
+      "os_detection": [
+        {
+          "name": "Linux 4.19 - 5.15",
+          "accuracy": "97",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "4.X",
+              "accuracy": "97",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:4"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 4.15",
+          "accuracy": "92",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "4.X",
+              "accuracy": "92",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:4.15"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "IPFire 2.27 (Linux 5.15 - 6.1)",
+          "accuracy": "91",
+          "osclass": [
+            {
+              "type": "firewall",
+              "vendor": "IPFire",
+              "osfamily": "IPFire",
+              "osgen": "2.X",
+              "accuracy": "91",
+              "cpe": [
+                "cpe:/o:ipfire:ipfire:2.27"
+              ]
+            },
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "5.X",
+              "accuracy": "91",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:5.15"
+              ]
+            },
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "6.X",
+              "accuracy": "91",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:6.1"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 5.4",
+          "accuracy": "90",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "5.X",
+              "accuracy": "90",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:5.4"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 5.0 - 5.14",
+          "accuracy": "88",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "5.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:5"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)",
+          "accuracy": "88",
+          "osclass": [
+            {
+              "type": "router",
+              "vendor": "MikroTik",
+              "osfamily": "RouterOS",
+              "osgen": "7.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:mikrotik:routeros:7"
+              ]
+            },
+            {
+              "type": "router",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "5.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:5.6.3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 3.11 - 4.9",
+          "accuracy": "88",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "3.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:3"
+              ]
+            },
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "4.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:4"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 3.2 - 3.8",
+          "accuracy": "88",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "3.X",
+              "accuracy": "88",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:3"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Linux 2.6.32",
+          "accuracy": "87",
+          "osclass": [
+            {
+              "type": "general purpose",
+              "vendor": "Linux",
+              "osfamily": "Linux",
+              "osgen": "2.6.X",
+              "accuracy": "87",
+              "cpe": [
+                "cpe:/o:linux:linux_kernel:2.6.32"
+              ]
+            }
+          ]
+        }
+      ],
+      "traceroute": [],
+      "error": null
+    }
+  },
+  "user_id": "gora"
+}

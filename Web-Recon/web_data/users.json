@@ -1,0 +1,8 @@
+{
+  "gora": {
+    "password": "pbkdf2:sha256:600000$HobZkaDH9Q0RdURA$fb36bb3c56ca61929219e3ba0de9c2f3bba23e7b19a01d45a692442bde2480fe",
+    "email": "",
+    "created_at": "2025-08-13T20:58:25.544763",
+    "role": "user"
+  }
+}
